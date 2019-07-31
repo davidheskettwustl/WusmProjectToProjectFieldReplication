@@ -1,0 +1,100 @@
+{
+	"name": "WUSM Project To Project Field Replication Module",
+
+	"namespace": "WashingtonUniversity\\ProjectToProjectFieldReplicationExternalModule",
+
+	"description": "An external module to copy Fields from one Project to another Project as a source and destination relationship.  If adding fields after SOURCE creation and do not want those fields copied use configuration in the SOURCE project. Both SOURCE and DESTINATION MUST HAVE the same field names and types to sucessfully copy data from SOURCE to DESTINATION.",
+
+  "authors": [
+      {
+          "name": "David L. Heskett",
+          "email": "davidheskett@wustl.edu",
+          "institution": "Washington University School of Medicine Institute for Informatics"
+      }
+  ],
+
+   "permissions": [
+      "redcap_save_record"
+   ],
+
+   "links": {
+      "project": [
+      ],
+      "control-center": [
+      ]
+   },
+
+   "project-settings": [
+			{
+				"key": "source_project_flag",
+				"name": "This is a SOURCE project<br>(checked if Source and unchecked if Destination)",
+				"type": "checkbox"
+			},
+			{
+				"key": "descriptive_destination_section",
+				"name": "<span style=\"background-color:#CCFFCC;\"><strong> &nbsp; DESTINATION CONFIG &nbsp; </strong></span><br/>(For Destination ONLY)",
+				"type": "descriptive"
+			},
+			{
+				"key": "descriptive_blank1",
+				"name": " ",
+				"type": "descriptive"
+			},
+			{
+				"key": "allowed_project_id",
+				"name": "Allowed Source Project ID",
+				"type": "project-id"
+			},
+			{
+				"key": "descriptive_source_section",
+				"name": "<span style=\"background-color:#CCFFCC;\"><strong> &nbsp; SOURCE CONFIG &nbsp; </strong></span><br/>(For Source ONLY)",
+				"type": "descriptive"
+			},
+			{
+				"key": "destination_project_id",
+				"name": "Project ID of Destination (for Source reference)",
+				"type": "project-id"
+			},
+	    {
+	        "key": "overwrite_destination_blanks_flag",
+	        "name": "Overwrite Destination with empty fields (blank fields will overwrite filled in data on the destination)",
+	        "type": "checkbox"
+	    },
+			{
+				"key": "field_list_exclude_copy",
+				"name": "Field variable to exclude from copy",
+				"required": false,
+				"type": "field-list",
+				"repeatable": true
+			},
+			{
+				"key": "descriptive_blank3",
+				"name": " ",
+				"type": "descriptive"
+			},
+			{
+				"key": "descriptive_debugger_section",
+				"name": "<span style=\"background-color:#CCFFCC;\"><strong> &nbsp; DEBUG CONFIG &nbsp; </strong></span><br/>(REDCap Admin Use)",
+				"type": "descriptive"
+			},
+	    {
+	        "key": "debug_mode_project",
+	        "name": "Project Debug Mode",
+	        "type": "checkbox"
+	    }
+		],
+		
+   "system-settings": [
+	    {
+	        "key": "debug_mode_system",
+	        "name": "System Debug Mode",
+	        "type": "checkbox"
+	    },
+	    {
+	        "key": "debug_mode_log",
+	        "name": "Log Mode",
+	        "type": "checkbox"
+	    }
+    ]
+
+}
